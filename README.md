@@ -1,2 +1,2 @@
-# finance-tracker
-Finance Tracker Web Application Ruby
+# Finance Tracker Web Application in Ruby
+
