@@ -360,3 +360,182 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 18040)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-01-23 18:39:26.054206', '2025-01-23 18:39:26.054209') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20250123183637)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250123183637') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2025-01-23 13:40:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 186)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 34026)
+Completed 200 OK in 51ms (Views: 40.6ms | ActiveRecord: 0.0ms | Allocations: 39225)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-23 13:40:17 -0500
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1483)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 1729)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-23 13:40:18 -0500
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1478)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 1723)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-23 13:41:16 -0500
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 2066)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-01-23 13:41:16 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 587)
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 3488)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 17765)
+Completed 200 OK in 35ms (Views: 23.8ms | ActiveRecord: 1.8ms | Allocations: 27962)
+
+
+Started GET "/users" for 127.0.0.1 at 2025-01-23 13:41:27 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for 127.0.0.1 at 2025-01-23 13:41:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-01-23 13:43:06 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 556)
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1809)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 16141)
+Completed 200 OK in 27ms (Views: 19.5ms | ActiveRecord: 2.2ms | Allocations: 21964)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-01-23 14:36:45 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 115)
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 20.9ms | Allocations: 869)
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 1964)
+Completed 200 OK in 77ms (Views: 46.1ms | ActiveRecord: 0.0ms | Allocations: 2735)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-01-23 14:36:46 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 221)
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 83)
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1602)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2703)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3800)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-01-23 14:41:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 528)
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3644)
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 36844)
+Completed 200 OK in 71ms (Views: 52.3ms | ActiveRecord: 1.8ms | Allocations: 50967)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-01-23 14:42:02 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"akumarm@ncsu.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "akumarm@ncsu.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "akumarm@ncsu.edu"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2025-01-23 19:42:03.052120"], ["updated_at", "2025-01-23 19:42:03.052120"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 450ms (ActiveRecord: 3.5ms | Allocations: 11784)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-23 14:42:03 -0500
+Processing by WelcomeController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1412)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 4083)
+
+
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2025-01-23 14:42:10 -0500
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 14ms (ActiveRecord: 0.2ms | Allocations: 2822)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-23 14:42:10 -0500
+Processing by WelcomeController#index as TURBO_STREAM
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 512)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-01-23 14:42:10 -0500
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1438)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2536)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 3554)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-01-23 14:42:24 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered /Users/ashwinkumarmuniswamy/.rvm/gems/ruby-3.2.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 888)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1987)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 2712)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-01-23 14:42:25 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"akumarm@ncsu.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "akumarm@ncsu.edu"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 447ms (ActiveRecord: 0.2ms | Allocations: 2958)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-23 14:42:26 -0500
+Processing by WelcomeController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1166)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 2927)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
